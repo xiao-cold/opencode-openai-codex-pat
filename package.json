@@ -1,0 +1,63 @@
+{
+  "name": "opencode-openai-codex-pat",
+  "version": "0.1.0",
+  "description": "Use an OpenAI Codex personal access token with OpenCode without replacing its built-in OpenAI OAuth provider.",
+  "author": "xiaocold",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiao-cold/opencode-openai-codex-pat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiao-cold/opencode-openai-codex-pat/issues"
+  },
+  "homepage": "https://github.com/xiao-cold/opencode-openai-codex-pat#readme",
+  "packageManager": "pnpm@11.13.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "node ./scripts/clean.mjs",
+    "build": "pnpm clean && tsc -p tsconfig.json",
+    "test": "pnpm build && node --test",
+    "prepack": "pnpm test"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "openai",
+    "codex",
+    "personal-access-token"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20",
+    "opencode": ">=1.17.18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "xdg-basedir": "^5.1.0"
+  },
+  "devDependencies": {
+    "@opencode-ai/plugin": "1.17.18",
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3"
+  }
+}
